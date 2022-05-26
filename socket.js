@@ -2,7 +2,11 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const server = require("http").createServer();
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: '*',
+  }
+});
 
 // socket logic here
 // note an instance is created for every device connected
